@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FDE Complete Curriculum — SaarathiAI</title>
+<style>
+:root {
+  --navy: #0F1F3D;
+  --blue: #1E4FC2;
+  --blue-light: #EBF0FC;
+  --green: #0E6B3A;
+  --green-light: #E8F5EE;
+  --amber: #B45309;
+  --amber-light: #FEF3C7;
+  --purple: #5B21B6;
+  --purple-light: #EDE9FE;
+  --teal: #0E7490;
+  --teal-light: #E0F2FE;
+  --red: #B91C1C;
+  --gray-50: #F8FAFC;
+  --gray-100: #F1F5F9;
+  --gray-200: #E2E8F0;
+  --gray-300: #CBD5E1;
+  --gray-400: #94A3B8;
+  --gray-600: #475569;
+  --gray-800: #1E293B;
+  --gray-900: #0F172A;
+  --white: #FFFFFF;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--gray-50); color: var(--gray-900); line-height: 1.5; }
+
+/* HEADER */
+.header { background: linear-gradient(135deg, var(--navy) 0%, #1a3a6b 100%); color: white; padding: 3rem 2rem 2.5rem; }
+.header-inner { max-width: 1000px; margin: 0 auto; }
+.header-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 1.25rem; letter-spacing: .04em; text-transform: uppercase; }
+.header h1 { font-size: 2.25rem; font-weight: 700; line-height: 1.15; margin-bottom: .5rem; }
+.header-sub { font-size: 1rem; color: rgba(255,255,255,0.65); margin-bottom: 2rem; max-width: 600px; }
+.stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; max-width: 500px; }
+.stat { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-sm); padding: .75rem 1rem; }
+.stat-n { font-size: 1.75rem; font-weight: 700; color: #7DD3FC; }
+.stat-l { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 2px; }
+
+/* MAIN */
+.main { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+
+/* ROADMAP */
+.section-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--gray-400); margin-bottom: .75rem; margin-top: 2rem; }
+.section-label:first-child { margin-top: 0; }
+.roadmap { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; margin-bottom: 2rem; }
+.rp { padding: 1rem .875rem; border-right: 1px solid var(--gray-200); }
+.rp:last-child { border-right: none; }
+.rp-phase { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; margin-bottom: .35rem; }
+.rp-title { font-size: 13px; font-weight: 600; margin-bottom: .25rem; }
+.rp-skills { font-size: 11px; color: var(--gray-600); line-height: 1.4; }
+.rp-weeks { font-size: 10px; color: var(--gray-400); margin-top: .35rem; font-weight: 500; }
+.rp-1 { background: #EBF0FC; } .rp-1 .rp-phase { color: var(--blue); }
+.rp-2 { background: #F0FDF4; } .rp-2 .rp-phase { color: var(--green); }
+.rp-3 { background: #E0F2FE; } .rp-3 .rp-phase { color: var(--teal); }
+.rp-4 { background: #FEF3C7; } .rp-4 .rp-phase { color: var(--amber); }
+.rp-5 { background: #EDE9FE; } .rp-5 .rp-phase { color: var(--purple); }
+
+/* TABS */
+.tabs { display: flex; gap: 0; border-bottom: 2px solid var(--gray-200); margin-bottom: 1.5rem; }
+.tab { padding: .65rem 1.25rem; font-size: 13px; font-weight: 500; color: var(--gray-400); cursor: pointer; border: none; background: none; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all .15s; }
+.tab:hover { color: var(--gray-800); }
+.tab.active { color: var(--blue); border-bottom-color: var(--blue); font-weight: 600; }
+.panel { display: none; }
+.panel.active { display: block; }
+
+/* GAP BANNER */
+.gap-banner { background: #FFFBEB; border: 1px solid #FDE68A; border-left: 4px solid var(--amber); border-radius: var(--radius-sm); padding: .875rem 1rem; margin-bottom: 1.25rem; font-size: 12.5px; color: var(--gray-600); line-height: 1.6; }
+.gap-banner strong { color: var(--amber); }
+
+/* MODULE CARDS */
+.mod { border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; margin-bottom: 8px; background: white; transition: box-shadow .15s; }
+.mod:hover { box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+.mod-head { display: flex; align-items: center; gap: 12px; padding: .875rem 1.125rem; cursor: pointer; background: white; user-select: none; }
+.mod-num { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+.mod-info { flex: 1; min-width: 0; }
+.mod-title { font-size: 14px; font-weight: 600; color: var(--gray-900); }
+.mod-meta { font-size: 11px; color: var(--gray-400); margin-top: 2px; }
+.mod-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.mod-hrs { font-size: 12px; font-weight: 600; color: var(--green); }
+.new-badge { background: #FEF3C7; color: var(--amber); font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; border: 1px solid #FDE68A; }
+.mod-chevron { font-size: 18px; color: var(--gray-300); transition: transform .2s; }
+.mod.open .mod-chevron { transform: rotate(180deg); }
+.mod-body { display: none; padding: 1.125rem 1.25rem; border-top: 1px solid var(--gray-100); background: var(--gray-50); }
+.mod.open .mod-body { display: block; }
+
+/* MODULE BODY */
+.body-section { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--gray-400); margin-bottom: .5rem; margin-top: 1rem; }
+.body-section:first-child { margin-top: 0; }
+.checks { display: grid; gap: 4px; }
+.check-item { display: flex; align-items: flex-start; gap: 8px; font-size: 12.5px; color: var(--gray-600); padding: .3rem 0; }
+.check-item::before { content: "☐"; color: var(--blue); font-size: 14px; flex-shrink: 0; margin-top: -1px; }
+.res-grid { display: grid; gap: 6px; }
+.res-card { display: flex; align-items: center; gap: 10px; padding: .6rem .875rem; background: white; border: 1px solid var(--gray-200); border-radius: var(--radius-sm); transition: border-color .15s; }
+.res-card:hover { border-color: var(--blue); }
+.res-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue-light); border: 2px solid var(--blue); flex-shrink: 0; }
+.res-info { flex: 1; min-width: 0; }
+.res-name { font-size: 12.5px; font-weight: 500; color: var(--gray-800); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.res-src { font-size: 11px; color: var(--gray-400); }
+.res-hrs { font-size: 11px; font-weight: 600; color: var(--green); white-space: nowrap; flex-shrink: 0; }
+.res-link { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: var(--blue); text-decoration: none; font-weight: 500; white-space: nowrap; flex-shrink: 0; padding: 3px 10px; background: var(--blue-light); border-radius: 20px; transition: background .15s; }
+.res-link:hover { background: #C7D7F9; }
+.capstone { background: linear-gradient(135deg, #EDE9FE, #DDD6FE); border: 1px solid #C4B5FD; border-radius: var(--radius-sm); padding: .875rem 1rem; margin-top: .5rem; }
+.capstone-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--purple); margin-bottom: .35rem; }
+.capstone-title { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: .25rem; }
+.capstone-desc { font-size: 12px; color: var(--gray-600); line-height: 1.5; }
+
+/* SKILL CHECK TAB */
+.skill-intro { font-size: 13px; color: var(--gray-600); margin-bottom: 1.25rem; }
+.skill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 1.25rem; }
+.skill-item label { font-size: 12.5px; font-weight: 500; display: flex; justify-content: space-between; margin-bottom: .4rem; }
+.skill-item .sk-pct { font-size: 12px; font-weight: 600; color: var(--blue); }
+.skill-item input[type=range] { width: 100%; accent-color: var(--blue); margin-bottom: .3rem; }
+.sk-bar-wrap { height: 6px; background: var(--gray-200); border-radius: 3px; overflow: hidden; }
+.sk-bar { height: 100%; border-radius: 3px; transition: width .3s, background .3s; }
+.rec-box { border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1rem; }
+.rec-focus { background: var(--blue-light); border: 1px solid #BFDBFE; }
+.rec-skip { background: var(--gray-100); border: 1px solid var(--gray-200); }
+.rec-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .5rem; }
+.rec-focus .rec-title { color: var(--blue); }
+.rec-skip .rec-title { color: var(--gray-400); }
+.rec-item { font-size: 13px; padding: .3rem 0; border-bottom: 1px solid rgba(0,0,0,.06); color: var(--gray-800); }
+.rec-item:last-child { border-bottom: none; }
+.skip-item { font-size: 13px; padding: .3rem 0; border-bottom: 1px solid var(--gray-200); color: var(--gray-400); text-decoration: line-through; }
+.skip-item:last-child { border-bottom: none; }
+
+/* T-SHAPED SKILLS TAB */
+.tshape-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1.25rem; }
+.tshape-col { background: white; border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; }
+.tshape-header { padding: .75rem 1rem; font-size: 13px; font-weight: 600; }
+.th-tech { background: var(--blue-light); color: var(--blue); }
+.th-human { background: var(--green-light); color: var(--green); }
+.tshape-list { padding: .5rem 0; }
+.tshape-item { display: flex; align-items: center; gap: 8px; padding: .4rem 1rem; border-bottom: 1px solid var(--gray-100); font-size: 12.5px; }
+.tshape-item:last-child { border-bottom: none; }
+.ttag { font-size: 10px; font-weight: 600; padding: 1px 7px; border-radius: 8px; margin-left: auto; white-space: nowrap; }
+.ttag-code { background: var(--blue-light); color: var(--blue); }
+.ttag-infra { background: var(--teal-light); color: var(--teal); }
+.ttag-ai { background: var(--purple-light); color: var(--purple); }
+.ttag-data { background: var(--amber-light); color: var(--amber); }
+.ttag-people { background: var(--green-light); color: var(--green); }
+.ttag-mindset { background: #FEE2E2; color: var(--red); }
+.ttag-career { background: #F0FDF4; color: var(--green); }
+.interview-box { background: #FFFBEB; border: 1px solid #FDE68A; border-left: 4px solid var(--amber); border-radius: var(--radius-sm); padding: 1rem 1.125rem; }
+.interview-box h4 { font-size: 12.5px; font-weight: 700; color: var(--amber); margin-bottom: .4rem; }
+.interview-box p { font-size: 12.5px; color: var(--gray-600); line-height: 1.6; }
+
+/* PORTFOLIO TAB */
+.port-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1.25rem; }
+.port-card { background: white; border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; }
+.port-card-header { padding: .75rem 1rem; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.pc-1 { background: var(--blue-light); color: var(--blue); }
+.pc-2 { background: var(--green-light); color: var(--green); }
+.pc-3 { background: var(--amber-light); color: var(--amber); }
+.pc-4 { background: var(--purple-light); color: var(--purple); }
+.port-card-body { padding: .75rem 1rem; }
+.port-card-body li { font-size: 12px; color: var(--gray-600); line-height: 1.7; margin-left: 1rem; }
+.linkedin-box { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 1rem 1.25rem; }
+.linkedin-box h4 { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: .5rem; }
+.linkedin-box p { font-size: 12.5px; color: var(--gray-600); line-height: 1.6; }
+
+/* FOOTER */
+.footer { background: var(--navy); color: rgba(255,255,255,0.5); text-align: center; padding: 2rem; font-size: 12px; margin-top: 3rem; }
+.footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+
+@media (max-width: 700px) {
+  .roadmap { grid-template-columns: 1fr 1fr; }
+  .rp:nth-child(5) { border-right: none; }
+  .stat-row { grid-template-columns: repeat(2,1fr); }
+  .skill-grid { grid-template-columns: 1fr; }
+  .tshape-grid { grid-template-columns: 1fr; }
+  .port-grid { grid-template-columns: 1fr; }
+  .header h1 { font-size: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-badge">✓ 100% Free · No Paywalls · SaarathiAI Career Track</div>
+    <h1>Forward Deployed Engineer<br>Complete Curriculum</h1>
+    <p class="header-sub">13 modules covering everything you need — from Python fundamentals to production AI deployment. Cross-checked against industry FDE roadmaps. Zero paid courses required.</p>
+    <div class="stat-row">
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">Modules</div></div>
+      <div class="stat"><div class="stat-n">~210</div><div class="stat-l">Free hours</div></div>
+      <div class="stat"><div class="stat-n">70+</div><div class="stat-l">Verified links</div></div>
+      <div class="stat"><div class="stat-n">$0</div><div class="stat-l">Cost</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="section-label">FDE roadmap — 5 phases</div>
+  <div class="roadmap">
+    <div class="rp rp-1"><div class="rp-phase">Phase 1</div><div class="rp-title">Foundation</div><div class="rp-skills">Python · Linux · Git · SQL · FastAPI</div><div class="rp-weeks">Weeks 1–4</div></div>
+    <div class="rp rp-2"><div class="rp-phase">Phase 2</div><div class="rp-title">AI Core</div><div class="rp-skills">LLMs · RAG · Agents · Evals</div><div class="rp-weeks">Weeks 5–9</div></div>
+    <div class="rp rp-3"><div class="rp-phase">Phase 3</div><div class="rp-title">Infrastructure</div><div class="rp-skills">Cloud · K8s · Terraform · Docker</div><div class="rp-weeks">Weeks 10–12</div></div>
+    <div class="rp rp-4"><div class="rp-phase">Phase 4</div><div class="rp-title">Production</div><div class="rp-skills">Vertex AI · Foundry · MCP · A2A</div><div class="rp-weeks">Weeks 13–15</div></div>
+    <div class="rp rp-5"><div class="rp-phase">Phase 5</div><div class="rp-title">Launch</div><div class="rp-skills">FDE Execution · Portfolio</div><div class="rp-weeks">Weeks 16–17</div></div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="sw('modules',this)">All modules</button>
+    <button class="tab" onclick="sw('assess',this)">Skill check</button>
+    <button class="tab" onclick="sw('tshape',this)">T-shaped skills</button>
+    <button class="tab" onclick="sw('port',this)">Portfolio</button>
+  </div>
+
+  <!-- MODULES TAB -->
+  <div id="tab-modules" class="panel active">
+    <div class="gap-banner"><strong>3 modules added after cross-checking community FDE roadmaps:</strong> Module 1c (Database / PostgreSQL + SQL — SELECT, JOIN, Indexing), Module 10 (Azure AI Foundry — critical for Microsoft-stack enterprise FDE roles), and Module 13 (Portfolio Strategy — GitHub projects + LinkedIn positioning). Everything else was already covered.</div>
+    <div id="modGrid"></div>
+  </div>
+
+  <!-- SKILL CHECK TAB -->
+  <div id="tab-assess" class="panel">
+    <p class="skill-intro">Rate your current level in each domain. The skill check shows what to skip and what to focus on first — so you spend time on gaps, not on things you already know.</p>
+    <div class="skill-grid" id="skillGrid"></div>
+    <div id="recOut"></div>
+  </div>
+
+  <!-- T-SHAPED SKILLS TAB -->
+  <div id="tab-tshape" class="panel">
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:1.25rem">FDEs need deep technical skills AND broad execution skills. Most candidates only have one half. Both are required to get the role and keep it.</p>
+    <div class="tshape-grid">
+      <div class="tshape-col">
+        <div class="tshape-header th-tech">Technical depth</div>
+        <div class="tshape-list">
+          <div class="tshape-item">Python + TypeScript (production-grade)<span class="ttag ttag-code">code</span></div>
+          <div class="tshape-item">SQL + PostgreSQL — SELECT, JOIN, Index<span class="ttag ttag-data">data</span></div>
+          <div class="tshape-item">FastAPI — production REST APIs<span class="ttag ttag-code">code</span></div>
+          <div class="tshape-item">RAG pipelines end-to-end<span class="ttag ttag-ai">AI</span></div>
+          <div class="tshape-item">LangGraph agent orchestration<span class="ttag ttag-ai">AI</span></div>
+          <div class="tshape-item">Eval frameworks + LangSmith<span class="ttag ttag-ai">AI</span></div>
+          <div class="tshape-item">Cloud: GCP / AWS / Azure<span class="ttag ttag-infra">infra</span></div>
+          <div class="tshape-item">Docker + Kubernetes + Helm<span class="ttag ttag-infra">infra</span></div>
+          <div class="tshape-item">Terraform + Ansible (IaC)<span class="ttag ttag-infra">infra</span></div>
+          <div class="tshape-item">MCP + A2A protocols (2026)<span class="ttag ttag-ai">AI</span></div>
+          <div class="tshape-item">Azure AI Foundry / Vertex AI<span class="ttag ttag-ai">AI</span></div>
+        </div>
+      </div>
+      <div class="tshape-col">
+        <div class="tshape-header th-human">Execution breadth</div>
+        <div class="tshape-list">
+          <div class="tshape-item">Customer discovery — surface real constraints<span class="ttag ttag-people">people</span></div>
+          <div class="tshape-item">Problem decomposition under ambiguity<span class="ttag ttag-people">people</span></div>
+          <div class="tshape-item">Solution design documentation (1-pager)<span class="ttag ttag-people">people</span></div>
+          <div class="tshape-item">Technical communication: CTO to CFO<span class="ttag ttag-people">people</span></div>
+          <div class="tshape-item">Stakeholder management under pressure<span class="ttag ttag-people">people</span></div>
+          <div class="tshape-item">Radical ownership — if it's broken, fix it<span class="ttag ttag-mindset">mindset</span></div>
+          <div class="tshape-item">Writing customer-facing docs unprompted<span class="ttag ttag-people">people</span></div>
+          <div class="tshape-item">Training customers to self-operate<span class="ttag ttag-people">people</span></div>
+          <div class="tshape-item">Scoping engagements, flagging risks early<span class="ttag ttag-mindset">mindset</span></div>
+          <div class="tshape-item">3–4 GitHub projects + LinkedIn positioning<span class="ttag ttag-career">career</span></div>
+          <div class="tshape-item">FDE interview: decomposition case study<span class="ttag ttag-career">career</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="interview-box">
+      <h4>FDE interview reality — 2026</h4>
+      <p>FDE interviews test deployment thinking under ambiguity, not LeetCode. The critical stage is the decomposition case study: given a vague customer problem, most candidates jump straight to solutions and fail. Win it by asking 3 clarifying questions before proposing anything, then scope the simplest possible MVP and show you understand the customer's environment is messier than the problem statement suggests.</p>
+    </div>
+  </div>
+
+  <!-- PORTFOLIO TAB -->
+  <div id="tab-port" class="panel">
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:1.25rem">Because FDE is a relatively new role, a portfolio of real end-to-end projects is the single best way to prove you can do the job. Build 4 projects, put them on GitHub, and showcase them on LinkedIn.</p>
+    <div class="port-grid">
+      <div class="port-card">
+        <div class="port-card-header pc-1">Project 1 — RAG System</div>
+        <div class="port-card-body"><ul>
+          <li>FastAPI + PostgreSQL backend</li>
+          <li>ChromaDB or Pinecone vector store</li>
+          <li>Source citations in every response</li>
+          <li>Dockerized with docker-compose</li>
+          <li>README with curl examples for every endpoint</li>
+        </ul></div>
+      </div>
+      <div class="port-card">
+        <div class="port-card-header pc-2">Project 2 — LangGraph Agent</div>
+        <div class="port-card-body"><ul>
+          <li>2+ real external API tools (not mocked)</li>
+          <li>Persistent memory across sessions (LangMem)</li>
+          <li>HITL approval checkpoint before write ops</li>
+          <li>LangSmith observability on every run</li>
+          <li>Deployed to Cloud Run via Terraform</li>
+        </ul></div>
+      </div>
+      <div class="port-card">
+        <div class="port-card-header pc-3">Project 3 — Azure AI Foundry</div>
+        <div class="port-card-body"><ul>
+          <li>Agent built on Microsoft Foundry Agent Service</li>
+          <li>Connected to PostgreSQL via MCP Toolbox</li>
+          <li>Enterprise auth via Microsoft Entra ID</li>
+          <li>Demonstrates Microsoft-stack FDE readiness</li>
+        </ul></div>
+      </div>
+      <div class="port-card">
+        <div class="port-card-header pc-4">Project 4 — Full Capstone</div>
+        <div class="port-card-body"><ul>
+          <li>1-page solution design document</li>
+          <li>Production deployment via Terraform</li>
+          <li>Automated evals on 20 test questions</li>
+          <li>Customer README — operate without the builder</li>
+          <li>5-minute Loom video walkthrough</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="linkedin-box">
+      <h4>LinkedIn positioning for FDE roles</h4>
+      <p>Use the exact title "Forward Deployed Engineer" or "Forward Deployed AI Engineer" in your headline — recruiter filters are exact-match. For each project, write: the problem it solved, the stack used, and one measurable outcome. Pin your best GitHub project. Add a Loom demo to your featured section. FDE job postings grew over 1,000% in 2025 — the market is real and the talent pool is tiny.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  Built by SaarathiAI · 100% free · No paywalls · <a href="#">saarathiai.com</a>
+</div>
+
+<script>
+const MODS = [
+  {num:"1a",title:"Python Fundamentals",phase:1,hrs:"~13 hrs",isNew:false,
+   phaseColor:"blue",
+   checks:["Write functions, classes, and use OOP principles in Python?","Handle exceptions, file I/O, and structured JSON logging?","Use virtual environments and manage dependencies with pip and poetry?","Write async functions and know when to use them vs synchronous?"],
+   resources:[
+     {n:"Automate the Boring Stuff with Python",src:"automatetheboringstuff.com",url:"https://automatetheboringstuff.com",hrs:"10 hrs"},
+     {n:"AI Python for Beginners (DeepLearning.AI — Andrew Ng)",src:"deeplearning.ai",url:"https://deeplearning.ai/short-courses/ai-python-for-beginners/",hrs:"3 hrs"},
+   ]},
+  {num:"1b",title:"FastAPI — REST APIs and Auth",phase:1,hrs:"~6 hrs",isNew:false,
+   phaseColor:"blue",
+   checks:["Build a REST API with full CRUD endpoints in FastAPI?","Add JWT authentication and role-based authorization?","Validate requests with Pydantic models?","Auto-generate API documentation with OpenAPI / Swagger?"],
+   resources:[
+     {n:"FastAPI Official Tutorial — complete, free, interactive",src:"fastapi.tiangolo.com",url:"https://fastapi.tiangolo.com/tutorial/",hrs:"4 hrs"},
+     {n:"FastAPI Security and Auth (official docs section)",src:"fastapi.tiangolo.com",url:"https://fastapi.tiangolo.com/tutorial/security/",hrs:"2 hrs"},
+   ]},
+  {num:"1c",title:"Database Management — PostgreSQL and SQL",phase:1,hrs:"~10 hrs",isNew:true,
+   phaseColor:"blue",
+   checks:["Write SELECT, JOIN, GROUP BY, and subqueries from memory?","Create indexes and explain why they matter for query performance?","Design a normalized table schema from a business requirement?","Connect PostgreSQL to a Python app with SQLAlchemy or psycopg2?","Use pgAdmin to inspect and manage a live database?"],
+   resources:[
+     {n:"PostgreSQL Official Tutorial (complete, free docs)",src:"postgresql.org",url:"https://www.postgresql.org/docs/current/tutorial.html",hrs:"4 hrs"},
+     {n:"SQLZoo — interactive SQL exercises (browser-based, free)",src:"sqlzoo.net",url:"https://sqlzoo.net/wiki/SQL_Tutorial",hrs:"4 hrs"},
+     {n:"Neon PostgreSQL Tutorial — SELECT, JOIN, Index deep dive",src:"neon.com",url:"https://neon.com/postgresql/tutorial",hrs:"3 hrs"},
+     {n:"Mode SQL Tutorial (analytics queries, free)",src:"mode.com",url:"https://mode.com/sql-tutorial/",hrs:"3 hrs"},
+     {n:"W3Schools PostgreSQL (quick reference, free)",src:"w3schools.com",url:"https://www.w3schools.com/postgresql/",hrs:"2 hrs"},
+   ],
+   capstone:{t:"FastAPI + PostgreSQL production backend",d:"REST API with 5+ endpoints, Postgres DB with proper schema, JOIN queries, indexes on hot columns, Dockerized, README with curl examples for every route."}},
+  {num:"2",title:"Linux, Git, Bash",phase:1,hrs:"~17 hrs",isNew:false,
+   phaseColor:"blue",
+   checks:["Navigate the Linux filesystem, manage permissions, write Bash scripts?","Use systemd, cron, manage processes (ps, kill, top)?","Use Git branching, merging, rebasing, and squashing confidently?"],
+   resources:[
+     {n:"Linux Journey — interactive, browser-based, free",src:"linuxjourney.com",url:"https://linuxjourney.com",hrs:"8 hrs"},
+     {n:"OverTheWire: Bandit — gamified Linux learning (free)",src:"overthewire.org",url:"https://overthewire.org/wargames/bandit/",hrs:"5 hrs"},
+     {n:"GitHub Skills — interactive Git and GitHub courses (free)",src:"skills.github.com",url:"https://skills.github.com",hrs:"4 hrs"},
+   ]},
+  {num:"3",title:"AI Building Blocks — LLMs, RAG, Failure Modes",phase:2,hrs:"~20 hrs",isNew:false,
+   phaseColor:"green",
+   checks:["Explain tokens, context windows, and attention at a whiteboard?","Build a complete RAG pipeline from ingestion to grounded response with source citations?","Diagnose and fix hallucinations, retrieval failures, and context poisoning?","Generate reliable structured JSON outputs from an LLM with Pydantic?"],
+   resources:[
+     {n:"Prompt Engineering for Developers (DeepLearning.AI + OpenAI)",src:"deeplearning.ai",url:"https://deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/",hrs:"2 hrs"},
+     {n:"Building Systems with the ChatGPT API (DeepLearning.AI)",src:"deeplearning.ai",url:"https://deeplearning.ai/short-courses/building-systems-with-chatgpt/",hrs:"2 hrs"},
+     {n:"Introduction to RAG (LangChain Academy — official, free)",src:"academy.langchain.com",url:"https://academy.langchain.com/courses/foundation-introduction-to-langchain-python",hrs:"4 hrs"},
+     {n:"Building and Evaluating Advanced RAG (DeepLearning.AI)",src:"deeplearning.ai",url:"https://deeplearning.ai/short-courses/building-evaluating-advanced-rag/",hrs:"2 hrs"},
+     {n:"Knowledge Graphs for RAG — Neo4j (DeepLearning.AI)",src:"deeplearning.ai",url:"https://deeplearning.ai/short-courses/knowledge-graphs-rag/",hrs:"2 hrs"},
+     {n:"Pinecone Learning Center — vector DB fundamentals (free)",src:"pinecone.io",url:"https://docs.pinecone.io/guides/get-started/overview",hrs:"3 hrs"},
+     {n:"Anthropic Cookbook — failure modes and debugging patterns",src:"github.com/anthropics",url:"https://github.com/anthropics/anthropic-cookbook",hrs:"3 hrs"},
+   ]},
+  {num:"4",title:"Agent Development — LangGraph, HITL, Multi-Agent",phase:2,hrs:"~25 hrs",isNew:false,
+   phaseColor:"green",
+   checks:["Build a LangGraph state machine with conditional routing and cycles?","Add persistent memory across sessions with LangMem?","Implement a HITL checkpoint that pauses execution for human approval?","Connect an agent to 2+ real external APIs as tools (not mocked)?","Build a multi-agent system where specialized sub-agents hand off tasks?"],
+   resources:[
+     {n:"Introduction to LangChain — Python (LangChain Academy, official)",src:"academy.langchain.com",url:"https://academy.langchain.com/courses/foundation-introduction-to-langchain-python",hrs:"5 hrs"},
+     {n:"LangGraph Essentials — Python (LangChain Academy, official)",src:"academy.langchain.com",url:"https://academy.langchain.com/courses/langgraph-essentials-python",hrs:"5 hrs"},
+     {n:"Deep Agents with LangGraph (LangChain Academy, official)",src:"academy.langchain.com",url:"https://academy.langchain.com/courses/deep-agents-with-langgraph",hrs:"4 hrs"},
+     {n:"AI Agents in LangGraph (DeepLearning.AI + LangChain)",src:"deeplearning.ai",url:"https://deeplearning.ai/short-courses/ai-agents-in-langgraph/",hrs:"3 hrs"},
+     {n:"Multi AI Agent Systems with crewAI (DeepLearning.AI)",src:"deeplearning.ai",url:"https://deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/",hrs:"2 hrs"},
+     {n:"Agentic AI with LangChain and LangGraph (IBM/Coursera, free audit)",src:"coursera.org",url:"https://coursera.org/learn/agentic-ai-with-langchain-and-langgraph",hrs:"10 hrs"},
+   ],
+   capstone:{t:"Production LangGraph agent over real APIs",d:"2+ real API tool integrations, persistent memory, HITL approval checkpoint, content guardrails, LangSmith tracing on every run."}},
+  {num:"5",title:"Evaluation and Observability",phase:2,hrs:"~13 hrs",isNew:false,
+   phaseColor:"green",
+   checks:["Set up LangSmith tracing and read a full trace to find the failure?","Build an automated eval pipeline with accuracy and groundedness scores?","Monitor latency and cost-per-request in a production dashboard?","Detect and fix a prompt regression after a provider model update?"],
+   resources:[
+     {n:"Introduction to LangSmith (LangChain Academy, official)",src:"academy.langchain.com",url:"https://academy.langchain.com/collections",hrs:"3 hrs"},
+     {n:"Evaluating and Debugging with Weights & Biases (DeepLearning.AI)",src:"deeplearning.ai",url:"https://deeplearning.ai/short-courses/evaluating-debugging-generative-ai/",hrs:"2 hrs"},
+     {n:"Production-Ready AI with GCP — full free learning path (Google)",src:"cloud.google.com",url:"https://cloud.google.com/blog/topics/developers-practitioners/production-ready-ai-with-google-cloud-learning-path",hrs:"5 hrs"},
+   ]},
+  {num:"6",title:"Docker — Containerization",phase:3,hrs:"~10 hrs",isNew:false,
+   phaseColor:"teal",
+   checks:["Write a multi-stage Dockerfile that produces a lean production image?","Use docker-compose to run a multi-container application locally?","Debug a failed container build (inspect, logs, exec)?"],
+   resources:[
+     {n:"Play with Docker — browser-based labs, no install required (free)",src:"labs.play-with-docker.com",url:"https://labs.play-with-docker.com",hrs:"5 hrs"},
+     {n:"Docker Full Course — freeCodeCamp (Eissa, DolfinED, 7hrs, June 2026)",src:"freecodecamp.org",url:"https://www.freecodecamp.org/news/docker-full-course/",hrs:"7 hrs"},
+   ]},
+  {num:"7",title:"Cloud Fundamentals — GCP, AWS, Azure",phase:3,hrs:"~25 hrs",isNew:false,
+   phaseColor:"teal",
+   checks:["Create a VPC with subnets, security groups, and a load balancer?","Set up IAM roles with least-privilege policies?","Deploy compute, storage, and a container service on any major cloud?","Read a cloud bill and identify which services are driving cost?"],
+   resources:[
+     {n:"GCP Associate Cloud Engineer learning path (Skills Boost, free)",src:"cloudskillsboost.google",url:"https://cloudskillsboost.google/paths/11",hrs:"20 hrs"},
+     {n:"Claude with Google Cloud Vertex AI (Anthropic official, free)",src:"anthropic.skilljar.com",url:"https://anthropic.skilljar.com/claude-with-google-vertex",hrs:"3 hrs"},
+     {n:"AWS Skill Builder — 600+ free digital training courses",src:"skillbuilder.aws",url:"https://skillbuilder.aws",hrs:"15 hrs"},
+     {n:"Microsoft Learn — AZ-900 Azure Fundamentals path (free)",src:"learn.microsoft.com",url:"https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/",hrs:"10 hrs"},
+   ]},
+  {num:"8",title:"Kubernetes and Infrastructure as Code",phase:3,hrs:"~30 hrs",isNew:false,
+   phaseColor:"teal",
+   checks:["Deploy a Pod, Deployment, Service, and Ingress from scratch with kubectl?","Debug a failing pod with kubectl logs, describe, exec, and events?","Write Terraform to provision a full cloud environment from scratch?","Set up a GitHub Actions pipeline for terraform plan and apply?"],
+   resources:[
+     {n:"KillerCoda — browser-based Kubernetes scenarios (free, no install)",src:"killercoda.com",url:"https://killercoda.com/kubernetes",hrs:"8 hrs"},
+     {n:"Kubernetes.io — official interactive tutorials (free)",src:"kubernetes.io",url:"https://kubernetes.io/docs/tutorials/",hrs:"5 hrs"},
+     {n:"Docker & Kubernetes Fundamentals — freeCodeCamp (Guy Barrette, 6hrs hands-on)",src:"youtube.com",url:"https://www.youtube.com/watch?v=kTp5xUtcalw",hrs:"6 hrs"},
+     {n:"HashiCorp Learn — official Terraform tutorials (free)",src:"developer.hashicorp.com",url:"https://developer.hashicorp.com/terraform/tutorials",hrs:"8 hrs"},
+     {n:"GitHub Skills — GitHub Actions course (interactive, free)",src:"skills.github.com",url:"https://skills.github.com",hrs:"4 hrs"},
+   ]},
+  {num:"9",title:"AI Platforms — GCP Vertex AI and Cloud Run",phase:4,hrs:"~20 hrs",isNew:false,
+   phaseColor:"amber",
+   checks:["Deploy an agent to Google Cloud Run with auto-scaling from 0 instances?","Use Google ADK to build and deploy a production agent?","Select the right model from Vertex AI Model Garden for a given latency/cost tradeoff?","Estimate monthly cost for a RAG + agent deployment at 1K and 10K daily users?"],
+   resources:[
+     {n:"Production-Ready AI with GCP — complete free learning path (Google)",src:"cloud.google.com",url:"https://cloud.google.com/blog/topics/developers-practitioners/production-ready-ai-with-google-cloud-learning-path",hrs:"10 hrs"},
+     {n:"Google Agent Development Kit (ADK) — official docs and quickstart",src:"google.github.io/adk-docs",url:"https://google.github.io/adk-docs/",hrs:"4 hrs"},
+     {n:"Claude with Vertex AI — Anthropic official course (free)",src:"anthropic.skilljar.com",url:"https://anthropic.skilljar.com/claude-with-google-vertex",hrs:"3 hrs"},
+   ],
+   capstone:{t:"Deploy production agent to Google Cloud Run",d:"Vertex AI LLM backend, auto-scaling via Terraform, LangSmith observability, cost model at 100/1K/10K DAU, architecture diagram."}},
+  {num:"10",title:"Azure AI Foundry — Microsoft-Stack FDE Roles",phase:4,hrs:"~10 hrs",isNew:true,
+   phaseColor:"amber",
+   checks:["Navigate Microsoft Foundry workspace and create an AI project?","Deploy a model from Foundry's model catalog to an endpoint?","Build an agent using Foundry Agent Service with custom tools?","Connect an agent to enterprise data with Foundry IQ (RAG)?","Understand how Foundry handles RBAC and enterprise security (Entra ID)?","Explain the tradeoffs between Azure Foundry vs GCP Vertex AI for a customer?"],
+   resources:[
+     {n:"Microsoft Foundry official documentation (free)",src:"learn.microsoft.com",url:"https://learn.microsoft.com/en-us/azure/foundry/",hrs:"3 hrs"},
+     {n:"Develop generative AI apps on Microsoft Foundry (MS Learn, free path)",src:"learn.microsoft.com",url:"https://learn.microsoft.com/en-us/training/paths/develop-generative-ai-apps/",hrs:"4 hrs"},
+     {n:"Develop AI Agents on Azure — Foundry Agent Service (MS Learn, free path)",src:"learn.microsoft.com",url:"https://learn.microsoft.com/en-us/training/paths/develop-ai-agents-azure/",hrs:"4 hrs"},
+     {n:"AI Agent Fundamentals with Azure AI Foundry (Microsoft/Coursera, free audit)",src:"coursera.org",url:"https://www.coursera.org/learn/microsoft-ai-agent-fundamentals",hrs:"4 hrs"},
+   ],
+   capstone:{t:"Build and deploy an agent on Microsoft Foundry",d:"Agent connected to PostgreSQL via MCP Toolbox, enterprise auth via Entra ID, deployed to Azure, document the tradeoffs vs. GCP Vertex AI."}},
+  {num:"11",title:"MCP, A2A and Enterprise Integration",phase:4,hrs:"~12 hrs",isNew:false,
+   phaseColor:"amber",
+   checks:["Build an MCP server that exposes a database without leaking credentials?","Implement A2A protocol so two specialized agents communicate and hand off work?","Handle enterprise OAuth 2.0 / SAML SSO in a customer integration?","Set up RBAC for a multi-tenant agent deployment?"],
+   resources:[
+     {n:"MCP official documentation + quickstart (Anthropic)",src:"modelcontextprotocol.io",url:"https://modelcontextprotocol.io/introduction",hrs:"3 hrs"},
+     {n:"A2A: Agent2Agent Protocol (DeepLearning.AI + Google + IBM)",src:"deeplearning.ai",url:"https://deeplearning.ai/short-courses/a2a-the-agent2agent-protocol/",hrs:"2 hrs"},
+     {n:"MCP Toolbox for Databases — GCP lab (free)",src:"cloud.google.com",url:"https://cloud.google.com/blog/topics/developers-practitioners/production-ready-ai-with-google-cloud-learning-path",hrs:"3 hrs"},
+     {n:"OAuth 2.0 official guide and spec",src:"oauth.net",url:"https://oauth.net/2/",hrs:"3 hrs"},
+   ]},
+  {num:"12",title:"FDE Execution — Discovery, Design, Delivery",phase:5,hrs:"~15 hrs",isNew:false,
+   phaseColor:"purple",
+   checks:["Run a 60-minute discovery call that surfaces real constraints, not just stated requirements?","Take a vague customer email, ask 3 clarifying questions, produce a scoped problem statement?","Write a 1-page solution design document a CTO and a PM can both act on the same day?","Present architecture tradeoffs (latency, cost, reliability, security) to a non-technical executive?","Scope an 8-week engagement with milestones and proactively flag risks before they become blockers?"],
+   resources:[
+     {n:"Google Technical Writing Courses — TW1 and TW2 (free, self-paced)",src:"developers.google.com",url:"https://developers.google.com/tech-writing",hrs:"6 hrs"},
+     {n:"Google SRE Book — free online, chapters 1–8 essential for FDEs",src:"sre.google",url:"https://sre.google/sre-book/table-of-contents/",hrs:"8 hrs"},
+     {n:"Y Combinator — How to Talk to Users (YouTube, free)",src:"youtube.com",url:"https://www.youtube.com/watch?v=MT4Ig2uqjTc",hrs:"2 hrs"},
+   ]},
+  {num:"13",title:"Portfolio Strategy — GitHub and LinkedIn",phase:5,hrs:"~5 hrs",isNew:true,
+   phaseColor:"purple",
+   checks:["Do you have 3–4 end-to-end GitHub projects with working demos and clean READMEs?","Does your LinkedIn headline use the exact title 'Forward Deployed Engineer'?","Does each project README state the problem, the stack, and one measurable outcome?","Have you added a Loom demo to your LinkedIn featured section?","Have you applied to FDE roles at OpenAI, Anthropic, Palantir, Google, Scale AI, Databricks?"],
+   resources:[
+     {n:"GitHub — writing good READMEs (official guide, free)",src:"docs.github.com",url:"https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",hrs:"1 hr"},
+     {n:"Loom — free screen recording for project walkthroughs",src:"loom.com",url:"https://www.loom.com",hrs:"30 min"},
+     {n:"2026 FDE complete career guide (research-backed, free article)",src:"hashnode.com",url:"https://hashnode.com/blog/a-complete-2026-guide-to-the-forward-deployed-engineer",hrs:"1 hr"},
+   ],
+   capstone:{t:"Launch your FDE portfolio",d:"3+ GitHub projects live with READMEs and Loom demos. LinkedIn headline updated. Applied to 5 FDE roles. DM'd 3 current FDEs on LinkedIn for informational interviews."}}
+];
+
+const phaseColors = {
+  blue: {bg:"#EBF0FC",fg:"#1E4FC2"},
+  green: {bg:"#E8F5EE",fg:"#0E6B3A"},
+  teal: {bg:"#E0F2FE",fg:"#0E7490"},
+  amber: {bg:"#FEF3C7",fg:"#B45309"},
+  purple: {bg:"#EDE9FE",fg:"#5B21B6"}
+};
+
+function buildMods() {
+  const g = document.getElementById('modGrid');
+  MODS.forEach(m => {
+    const pc = phaseColors[m.phaseColor];
+    const div = document.createElement('div');
+    div.className = 'mod';
+    div.innerHTML = `
+      <div class="mod-head" onclick="this.parentNode.classList.toggle('open')">
+        <div class="mod-num" style="background:${pc.bg};color:${pc.fg}">${m.num}</div>
+        <div class="mod-info">
+          <div class="mod-title">${m.title}${m.isNew ? ' <span class="new-badge">NEW</span>' : ''}</div>
+          <div class="mod-meta">Phase ${m.phase}</div>
+        </div>
+        <div class="mod-right">
+          <div class="mod-hrs">${m.hrs}</div>
+          <div class="mod-chevron">⌄</div>
+        </div>
+      </div>
+      <div class="mod-body">
+        <div class="body-section">Competency checks — can you do these?</div>
+        <div class="checks">${m.checks.map(c => `<div class="check-item">${c}</div>`).join('')}</div>
+        <div class="body-section" style="margin-top:.875rem">Free resources — all links verified</div>
+        <div class="res-grid">${m.resources.map(r => `
+          <div class="res-card">
+            <div class="res-dot"></div>
+            <div class="res-info">
+              <div class="res-name">${r.n}</div>
+              <div class="res-src">${r.src}</div>
+            </div>
+            <div class="res-hrs">${r.hrs}</div>
+            <a class="res-link" href="${r.url}" target="_blank">Open ↗</a>
+          </div>`).join('')}
+        </div>
+        ${m.capstone ? `
+          <div class="body-section" style="margin-top:.875rem">Capstone project</div>
+          <div class="capstone">
+            <div class="capstone-label">Build this</div>
+            <div class="capstone-title">${m.capstone.t}</div>
+            <div class="capstone-desc">${m.capstone.d}</div>
+          </div>` : ''}
+      </div>`;
+    g.appendChild(div);
+  });
+}
+
+const SKILLS = [
+  {id:"python",l:"Python",mod:"1a"},{id:"sql",l:"PostgreSQL / SQL",mod:"1c"},
+  {id:"fastapi",l:"FastAPI / REST APIs",mod:"1b"},{id:"linux",l:"Linux / Bash / Git",mod:"2"},
+  {id:"llms",l:"LLMs / Prompt Engineering",mod:"3"},{id:"rag",l:"RAG Pipelines",mod:"3"},
+  {id:"agents",l:"LangGraph Agents",mod:"4"},{id:"evals",l:"Evals / LangSmith",mod:"5"},
+  {id:"docker",l:"Docker",mod:"6"},{id:"cloud",l:"Cloud (GCP/AWS/Azure)",mod:"7"},
+  {id:"k8s",l:"Kubernetes + Terraform",mod:"8"},{id:"foundry",l:"Azure AI Foundry",mod:"10"},
+  {id:"mcp",l:"MCP / A2A",mod:"11"},{id:"portfolio",l:"GitHub Portfolio",mod:"13"}
+];
+
+const sv = {};
+function barColor(v) {
+  if (v >= 70) return "#0E6B3A";
+  if (v >= 40) return "#1E4FC2";
+  return "#B91C1C";
+}
+
+function buildSkills() {
+  const g = document.getElementById('skillGrid');
+  SKILLS.forEach(s => {
+    sv[s.id] = 50;
+    const d = document.createElement('div');
+    d.className = 'skill-item';
+    d.innerHTML = `
+      <label>${s.l} <span class="sk-pct" id="pct-${s.id}">50%</span></label>
+      <input type="range" min="0" max="100" value="50" step="10" oninput="upSk('${s.id}',this.value)">
+      <div class="sk-bar-wrap"><div class="sk-bar" id="bar-${s.id}" style="width:50%;background:#1E4FC2"></div></div>`;
+    g.appendChild(d);
+  });
+  renderRec();
+}
+
+function upSk(id, v) {
+  sv[id] = parseInt(v);
+  const bar = document.getElementById('bar-'+id);
+  bar.style.width = v + '%';
+  bar.style.background = barColor(parseInt(v));
+  document.getElementById('pct-'+id).textContent = v + '%';
+  renderRec();
+}
+
+function renderRec() {
+  const skip = [], focus = [];
+  SKILLS.forEach(s => {
+    if (sv[s.id] >= 70) skip.push(s.l + ' (Module ' + s.mod + ')');
+    else if (sv[s.id] < 40) focus.push(s.l + ' → start with Module ' + s.mod);
+  });
+  const out = document.getElementById('recOut');
+  out.innerHTML = `
+    <div class="rec-box rec-focus">
+      <div class="rec-title">Focus on these first</div>
+      ${focus.length ? focus.map(f => `<div class="rec-item">→ ${f}</div>`).join('') : '<div class="rec-item" style="color:#475569">Your baseline looks solid — proceed sequentially through the modules.</div>'}
+    </div>
+    ${skip.length ? `
+    <div class="rec-box rec-skip">
+      <div class="rec-title">Skip or skim</div>
+      ${skip.map(s => `<div class="skip-item">${s}</div>`).join('')}
+    </div>` : ''}`;
+}
+
+function sw(id, el) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('tab-' + id).classList.add('active');
+}
+
+buildMods();
+buildSkills();
+</script>
+</body>
+</html>

@@ -3,6 +3,7 @@
 Paid FDE courses charge thousands of dollars and teach 3 modules. This teaches everything. Free.
 
 > 💻 **Interactive version:** [**Open the live preview →**](https://medaram9.github.io/fde-complete-curriculum/FDE-Pathfinder-By_TheSaarathiai-Preview.html) — includes skill checker, T-shaped skills tracker, and portfolio guide. (Or download [FDE-Pathfinder-By_TheSaarathiai-Preview.html](./FDE-Pathfinder-By_TheSaarathiai-Preview.html) and open it locally.)
+> 🖼️ **One-pager:** [FDE-Pathfinder-OnePager_By_TheSaarathiai.png](./FDE-Pathfinder-OnePager_By_TheSaarathiai.png) — shareable image for social posts.
 
 ![Modules](https://img.shields.io/badge/Modules-13-blue)
 ![Hours](https://img.shields.io/badge/Free%20Hours-210%2B-green)

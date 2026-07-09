@@ -364,9 +364,9 @@ FDEs need deep technical expertise (the vertical bar of the T) — Python, RAG, 
 
 Not LeetCode. The decomposition case study. Ask 3 clarifying questions before proposing anything. Scope the simplest MVP. Show you understand the customer environment is messier than stated.
 
-## 🚀 Built by SaarathiAI Career Pathfinder
+## 🚀 Built by TheSaarathiAI Career Pathfinder
 
-This curriculum is part of SaarathiAI Career Pathfinder — an AI platform that personalizes this learning path based on your existing skills. It assesses what you already know, skips those modules, and navigates you directly to the specific lesson that closes each gap. Think Google Maps for your career. Coming soon.
+This curriculum is part of TheSaarathiAI Career Pathfinder — an AI platform that personalizes this learning path based on your existing skills. It assesses what you already know, skips those modules, and navigates you directly to the specific lesson that closes each gap. Think Google Maps for your career. Coming soon.
 
 ## 🤝 Contributing
 

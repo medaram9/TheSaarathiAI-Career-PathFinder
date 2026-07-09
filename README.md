@@ -6,24 +6,24 @@ Paid FDE courses charge thousands of dollars and teach 3 modules. This teaches e
 > 🖼️ **One-pager:** [FDE-Pathfinder-OnePager_By_TheSaarathiai.png](./FDE-Pathfinder-OnePager_By_TheSaarathiai.png) — shareable image for social posts.
 
 ![Modules](https://img.shields.io/badge/Modules-13-blue)
-![Hours](https://img.shields.io/badge/Free%20Hours-210%2B-green)
-![Resources](https://img.shields.io/badge/Verified%20Links-70%2B-orange)
+![Hours](https://img.shields.io/badge/Free%20Hours-150%2B-green)
+![Resources](https://img.shields.io/badge/Verified%20Links-80%2B-orange)
 ![Cost](https://img.shields.io/badge/Cost-%240-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-purple)
 
 ## What is a Forward Deployed Engineer?
 
-A Forward Deployed Engineer (FDE) is a senior engineer who embeds inside enterprise customer environments to deploy, integrate, debug, and own production AI systems — not just ship code and hand it off. The role is exploding: FDE job postings grew over 1,000% in 2025, with OpenAI, Anthropic, Palantir, Google, and Scale AI hiring at $300K+.
+A Forward Deployed Engineer (FDE) is a senior engineer who embeds inside enterprise customer environments to deploy, integrate, debug, and own production AI systems — not just ship code and hand it off. The role is exploding: FDE roles are growing at an unprecedented pace in 2026, with OpenAI, Anthropic, Palantir, Google, and Scale AI hiring at $300K–$600K+.
 
 ## The 5-Phase Roadmap
 
-| Phase | Focus | Modules | Timeline |
-|---|---|---|---|
-| 1 | Foundation | Python · Linux · Git · SQL · FastAPI | Weeks 1–4 |
-| 2 | AI Core | LLMs · RAG · Agents · Evals | Weeks 5–9 |
-| 3 | Infrastructure | Cloud · Docker · K8s · Terraform | Weeks 10–12 |
-| 4 | Production | Vertex AI · Azure Foundry · MCP · A2A | Weeks 13–15 |
-| 5 | Launch | FDE Execution · Portfolio | Weeks 16–17 |
+| Phase | Focus | Modules |
+|---|---|---|
+| 1 | Foundation | Python · Linux · Git · SQL · FastAPI |
+| 2 | AI Core | LLMs · RAG · Agents · Evals |
+| 3 | Infrastructure | Cloud · Docker · K8s · Terraform |
+| 4 | Production | Vertex AI · Azure Foundry · MCP · A2A |
+| 5 | Launch | FDE Execution · Portfolio |
 
 ## What is T-Shaped Skills?
 
@@ -32,7 +32,7 @@ FDEs need deep technical expertise (the vertical bar of the T) — Python, RAG, 
 ## All 13 Modules
 
 <details>
-<summary><strong>Module 1a: Python Fundamentals (~13 hrs)</strong></summary>
+<summary><strong>Module 1a: Python Fundamentals (~5 hrs)</strong></summary>
 
 **Competency checks**
 - [ ] Write functions, classes, and use OOP principles in Python?
@@ -44,13 +44,13 @@ FDEs need deep technical expertise (the vertical bar of the T) — Python, RAG, 
 
 | Resource | Platform | Link | Hours |
 |---|---|---|---|
-| Automate the Boring Stuff with Python | automatetheboringstuff.com | [Open](https://automatetheboringstuff.com) | 10 hrs |
+| Automate the Boring Stuff with Python | automatetheboringstuff.com | [Open](https://automatetheboringstuff.com) | 8 hrs |
 | AI Python for Beginners (DeepLearning.AI — Andrew Ng) | deeplearning.ai | [Open](https://deeplearning.ai/short-courses/ai-python-for-beginners/) | 3 hrs |
 
 </details>
 
 <details>
-<summary><strong>Module 1b: FastAPI — REST APIs and Auth (~6 hrs)</strong></summary>
+<summary><strong>Module 1b: FastAPI — REST APIs and Auth (~3 hrs)</strong></summary>
 
 **Competency checks**
 - [ ] Build a REST API with full CRUD endpoints in FastAPI?
@@ -62,13 +62,15 @@ FDEs need deep technical expertise (the vertical bar of the T) — Python, RAG, 
 
 | Resource | Platform | Link | Hours |
 |---|---|---|---|
-| FastAPI Official Tutorial — complete, free, interactive | fastapi.tiangolo.com | [Open](https://fastapi.tiangolo.com/tutorial/) | 4 hrs |
-| FastAPI Security and Auth (official docs section) | fastapi.tiangolo.com | [Open](https://fastapi.tiangolo.com/tutorial/security/) | 2 hrs |
+| FastAPI Official Tutorial — complete, free, interactive | fastapi.tiangolo.com | [Open](https://fastapi.tiangolo.com/tutorial/) | 2 hrs |
+| FastAPI Security and Auth (official docs section) | fastapi.tiangolo.com | [Open](https://fastapi.tiangolo.com/tutorial/security/) | 1 hr |
+| FastAPI Crash Course — Traversy Media (Jan 2026, verified) | youtube.com/TraversyMedia | [Open](https://www.youtube.com/watch?v=8TMQcRcBnW8) | 1.5 hrs |
+| FastAPI Course for Beginners — freeCodeCamp (Feb 2026, verified) | youtube.com/freecodecamp | [Open](https://www.youtube.com/watch?v=tLKKmouUams) | 1 hr |
 
 </details>
 
 <details>
-<summary><strong>Module 1c: Database Management — PostgreSQL and SQL (~10 hrs) ⭐ NEW</strong></summary>
+<summary><strong>Module 1c: Database Management — PostgreSQL and SQL (~5 hrs) ⭐ NEW</strong></summary>
 
 **Competency checks**
 - [ ] Write SELECT, JOIN, GROUP BY, and subqueries from memory?
@@ -86,6 +88,8 @@ FDEs need deep technical expertise (the vertical bar of the T) — Python, RAG, 
 | Neon PostgreSQL Tutorial — SELECT, JOIN, Index deep dive | neon.com | [Open](https://neon.com/postgresql/tutorial) | 3 hrs |
 | Mode SQL Tutorial (analytics queries, free) | mode.com | [Open](https://mode.com/sql-tutorial/) | 3 hrs |
 | W3Schools PostgreSQL (quick reference, free) | w3schools.com | [Open](https://www.w3schools.com/postgresql/) | 2 hrs |
+| Learn PostgreSQL Full Course — freeCodeCamp + Amigoscode (verified) | youtube.com/freecodecamp | [Open](https://www.youtube.com/watch?v=qw--VYLpxG4) | 4 hrs |
+| PostgreSQL Tutorial for Beginners — freeCodeCamp (verified) | youtube.com/freecodecamp | [Open](https://www.youtube.com/watch?v=SpfIwlAYaKk) | 2 hrs |
 
 **Capstone Project**
 
@@ -94,7 +98,7 @@ FDEs need deep technical expertise (the vertical bar of the T) — Python, RAG, 
 </details>
 
 <details>
-<summary><strong>Module 2: Linux, Git, Bash (~17 hrs)</strong></summary>
+<summary><strong>Module 2: Linux, Git, Bash (~12 hrs)</strong></summary>
 
 **Competency checks**
 - [ ] Navigate the Linux filesystem, manage permissions, write Bash scripts?
@@ -105,14 +109,14 @@ FDEs need deep technical expertise (the vertical bar of the T) — Python, RAG, 
 
 | Resource | Platform | Link | Hours |
 |---|---|---|---|
-| Linux Journey — interactive, browser-based, free | linuxjourney.com | [Open](https://linuxjourney.com) | 8 hrs |
-| OverTheWire: Bandit — gamified Linux learning (free) | overthewire.org | [Open](https://overthewire.org/wargames/bandit/) | 5 hrs |
+| Linux Journey — interactive, browser-based, free | linuxjourney.com | [Open](https://linuxjourney.com) | 5 hrs |
+| OverTheWire: Bandit — gamified Linux learning (free) | overthewire.org | [Open](https://overthewire.org/wargames/bandit/) | 3 hrs |
 | GitHub Skills — interactive Git and GitHub courses (free) | skills.github.com | [Open](https://skills.github.com) | 4 hrs |
 
 </details>
 
 <details>
-<summary><strong>Module 3: AI Building Blocks — LLMs, RAG, Failure Modes (~20 hrs)</strong></summary>
+<summary><strong>Module 3: AI Building Blocks — LLMs, RAG, Failure Modes (~16 hrs)</strong></summary>
 
 **Competency checks**
 - [ ] Explain tokens, context windows, and attention at a whiteboard?
@@ -126,7 +130,7 @@ FDEs need deep technical expertise (the vertical bar of the T) — Python, RAG, 
 |---|---|---|---|
 | Prompt Engineering for Developers (DeepLearning.AI + OpenAI) | deeplearning.ai | [Open](https://deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/) | 2 hrs |
 | Building Systems with the ChatGPT API (DeepLearning.AI) | deeplearning.ai | [Open](https://deeplearning.ai/short-courses/building-systems-with-chatgpt/) | 2 hrs |
-| Introduction to RAG (LangChain Academy — official, free) | academy.langchain.com | [Open](https://academy.langchain.com/courses/foundation-introduction-to-langchain-python) | 4 hrs |
+| Introduction to RAG (LangChain Academy — official, free) | academy.langchain.com | [Open](https://academy.langchain.com/courses/foundation-introduction-to-langchain-python) | 3 hrs |
 | Building and Evaluating Advanced RAG (DeepLearning.AI) | deeplearning.ai | [Open](https://deeplearning.ai/short-courses/building-evaluating-advanced-rag/) | 2 hrs |
 | Knowledge Graphs for RAG — Neo4j (DeepLearning.AI) | deeplearning.ai | [Open](https://deeplearning.ai/short-courses/knowledge-graphs-rag/) | 2 hrs |
 | Pinecone Learning Center — vector DB fundamentals (free) | pinecone.io | [Open](https://docs.pinecone.io/guides/get-started/overview) | 3 hrs |
@@ -162,7 +166,7 @@ FDEs need deep technical expertise (the vertical bar of the T) — Python, RAG, 
 </details>
 
 <details>
-<summary><strong>Module 5: Evaluation and Observability (~13 hrs)</strong></summary>
+<summary><strong>Module 5: Evaluation and Observability (~10 hrs)</strong></summary>
 
 **Competency checks**
 - [ ] Set up LangSmith tracing and read a full trace to find the failure?
@@ -181,7 +185,7 @@ FDEs need deep technical expertise (the vertical bar of the T) — Python, RAG, 
 </details>
 
 <details>
-<summary><strong>Module 6: Docker (~10 hrs)</strong></summary>
+<summary><strong>Module 6: Docker (~6 hrs)</strong></summary>
 
 **Competency checks**
 - [ ] Write a multi-stage Dockerfile that produces a lean production image?
@@ -192,13 +196,13 @@ FDEs need deep technical expertise (the vertical bar of the T) — Python, RAG, 
 
 | Resource | Platform | Link | Hours |
 |---|---|---|---|
-| Play with Docker — browser-based labs, no install required (free) | labs.play-with-docker.com | [Open](https://labs.play-with-docker.com) | 5 hrs |
+| Play with Docker — browser-based labs, no install required (free) | labs.play-with-docker.com | [Open](https://labs.play-with-docker.com) | 4 hrs |
 | Docker Full Course — freeCodeCamp (Eissa, DolfinED, 7hrs, June 2026) | freecodecamp.org | [Open](https://www.freecodecamp.org/news/docker-full-course/) | 7 hrs |
 
 </details>
 
 <details>
-<summary><strong>Module 7: Cloud Fundamentals — GCP, AWS, Azure (~25 hrs)</strong></summary>
+<summary><strong>Module 7: Cloud Fundamentals — GCP, AWS, Azure (~16 hrs)</strong></summary>
 
 **Competency checks**
 - [ ] Create a VPC with subnets, security groups, and a load balancer?
@@ -213,12 +217,13 @@ FDEs need deep technical expertise (the vertical bar of the T) — Python, RAG, 
 | GCP Associate Cloud Engineer learning path (Skills Boost, free) | cloudskillsboost.google | [Open](https://cloudskillsboost.google/paths/11) | 20 hrs |
 | Claude with Google Cloud Vertex AI (Anthropic official, free) | anthropic.skilljar.com | [Open](https://anthropic.skilljar.com/claude-with-google-vertex) | 3 hrs |
 | AWS Skill Builder — 600+ free digital training courses | skillbuilder.aws | [Open](https://skillbuilder.aws) | 15 hrs |
-| Microsoft Learn — AZ-900 Azure Fundamentals path (free) | learn.microsoft.com | [Open](https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/) | 10 hrs |
+| Microsoft Learn — AZ-900 Azure Fundamentals path (free) | learn.microsoft.com | [Open](https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/) | 3 hrs |
+| AZ-900 Azure Fundamentals Full Course — freeCodeCamp (3hrs, verified) | youtube.com/freecodecamp | [Open](https://www.youtube.com/watch?v=NKEFWyIE3MU) | 3 hrs |
 
 </details>
 
 <details>
-<summary><strong>Module 8: Kubernetes and Infrastructure as Code (~30 hrs)</strong></summary>
+<summary><strong>Module 8: Kubernetes and Infrastructure as Code (~18 hrs)</strong></summary>
 
 **Competency checks**
 - [ ] Deploy a Pod, Deployment, Service, and Ingress from scratch with kubectl?
@@ -230,16 +235,17 @@ FDEs need deep technical expertise (the vertical bar of the T) — Python, RAG, 
 
 | Resource | Platform | Link | Hours |
 |---|---|---|---|
-| KillerCoda — browser-based Kubernetes scenarios (free, no install) | killercoda.com | [Open](https://killercoda.com/kubernetes) | 8 hrs |
+| KillerCoda — browser-based Kubernetes scenarios (free, no install) | killercoda.com | [Open](https://killercoda.com/kubernetes) | 5 hrs |
 | Kubernetes.io — official interactive tutorials (free) | kubernetes.io | [Open](https://kubernetes.io/docs/tutorials/) | 5 hrs |
 | Docker & Kubernetes Fundamentals — freeCodeCamp (Guy Barrette, 6hrs hands-on) | youtube.com | [Open](https://www.youtube.com/watch?v=kTp5xUtcalw) | 6 hrs |
-| HashiCorp Learn — official Terraform tutorials (free) | developer.hashicorp.com | [Open](https://developer.hashicorp.com/terraform/tutorials) | 8 hrs |
-| GitHub Skills — GitHub Actions course (interactive, free) | skills.github.com | [Open](https://skills.github.com) | 4 hrs |
+| HashiCorp Learn — official Terraform tutorials (free) | developer.hashicorp.com | [Open](https://developer.hashicorp.com/terraform/tutorials) | 2.5 hrs |
+| GitHub Skills — GitHub Actions course (interactive, free) | skills.github.com | [Open](https://skills.github.com) | 2 hrs |
+| Terraform Full Course — freeCodeCamp (2.5hrs, verified) | youtube.com/freecodecamp | [Open](https://www.youtube.com/watch?v=SLB_c_ayRMo) | 2.5 hrs |
 
 </details>
 
 <details>
-<summary><strong>Module 9: AI Platforms — GCP Vertex AI and Cloud Run (~20 hrs)</strong></summary>
+<summary><strong>Module 9: AI Platforms — GCP Vertex AI and Cloud Run (~17 hrs)</strong></summary>
 
 **Competency checks**
 - [ ] Deploy an agent to Google Cloud Run with auto-scaling from 0 instances?
@@ -280,6 +286,7 @@ FDEs need deep technical expertise (the vertical bar of the T) — Python, RAG, 
 | Develop generative AI apps on Microsoft Foundry (MS Learn, free path) | learn.microsoft.com | [Open](https://learn.microsoft.com/en-us/training/paths/develop-generative-ai-apps/) | 4 hrs |
 | Develop AI Agents on Azure — Foundry Agent Service (MS Learn, free path) | learn.microsoft.com | [Open](https://learn.microsoft.com/en-us/training/paths/develop-ai-agents-azure/) | 4 hrs |
 | AI Agent Fundamentals with Azure AI Foundry (Microsoft/Coursera, free audit) | coursera.org | [Open](https://www.coursera.org/learn/microsoft-ai-agent-fundamentals) | 4 hrs |
+| Azure AI Foundry Walkthrough — Microsoft Developer (official YouTube) | youtube.com/MicrosoftDeveloper | [Open](https://www.youtube.com/@MicrosoftDeveloper) | 1 hr |
 
 **Capstone Project**
 
@@ -288,7 +295,7 @@ FDEs need deep technical expertise (the vertical bar of the T) — Python, RAG, 
 </details>
 
 <details>
-<summary><strong>Module 11: MCP, A2A and Enterprise Integration (~12 hrs)</strong></summary>
+<summary><strong>Module 11: MCP, A2A and Enterprise Integration (~9 hrs)</strong></summary>
 
 **Competency checks**
 - [ ] Build an MCP server that exposes a database without leaking credentials?
@@ -303,7 +310,8 @@ FDEs need deep technical expertise (the vertical bar of the T) — Python, RAG, 
 | MCP official documentation + quickstart (Anthropic) | modelcontextprotocol.io | [Open](https://modelcontextprotocol.io/introduction) | 3 hrs |
 | A2A: Agent2Agent Protocol (DeepLearning.AI + Google + IBM) | deeplearning.ai | [Open](https://deeplearning.ai/short-courses/a2a-the-agent2agent-protocol/) | 2 hrs |
 | MCP Toolbox for Databases — GCP lab (free) | cloud.google.com | [Open](https://cloud.google.com/blog/topics/developers-practitioners/production-ready-ai-with-google-cloud-learning-path) | 3 hrs |
-| OAuth 2.0 official guide and spec | oauth.net | [Open](https://oauth.net/2/) | 3 hrs |
+| OAuth 2.0 official guide and spec | oauth.net | [Open](https://oauth.net/2/) | 0.25 hrs |
+| OAuth 2.0 Explained — Fireship (concise, trusted, verified) | youtube.com/Fireship | [Open](https://www.youtube.com/watch?v=KT8ybowdyr0) | 0.25 hrs |
 
 </details>
 

@@ -68,10 +68,10 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', syst
 .rp-5 { background: linear-gradient(180deg, rgba(167,139,250,0.14), transparent); } .rp-5 .rp-phase { color: var(--purple); }
 
 /* TABS */
-.tabs { display: flex; gap: 0; border-bottom: 2px solid var(--border); margin-bottom: 1.5rem; }
-.tab { padding: .65rem 1.25rem; font-size: 13px; font-weight: 500; color: var(--text-tertiary); cursor: pointer; border: none; background: none; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all .15s; }
-.tab:hover { color: var(--text); }
-.tab.active { color: var(--blue); border-bottom-color: var(--blue); font-weight: 600; }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
+.tab { padding: .65rem 1.25rem; font-size: 13px; font-weight: 500; color: var(--text-secondary); cursor: pointer; border: 1px solid var(--border); background: var(--bg-elevated); border-radius: var(--radius-pill); transition: all .15s; }
+.tab:hover { color: var(--text); border-color: var(--border-strong); box-shadow: 0 4px 14px rgba(0,0,0,.3); }
+.tab.active { color: #fff; font-weight: 600; background: linear-gradient(135deg, rgba(59,155,255,0.22), rgba(255,172,10,0.14)); border-color: rgba(59,155,255,0.55); box-shadow: 0 0 0 1px rgba(59,155,255,0.3), 0 6px 20px rgba(59,155,255,0.18); }
 .panel { display: none; }
 .panel.active { display: block; }
 

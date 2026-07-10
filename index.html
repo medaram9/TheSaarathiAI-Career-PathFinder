@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TheSaarathiAI Career Pathfinder — 5 Free Career Tracks</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root {
+  --bg: #06070A;
+  --bg-elevated: #101319;
+  --bg-elevated-2: #161A22;
+  --border: rgba(255,255,255,0.09);
+  --border-strong: rgba(255,255,255,0.16);
+  --text: #F3F5F8;
+  --text-secondary: #9BA9C4;
+  --text-tertiary: #6C7791;
+  --blue: #3B9BFF;
+  --blue-light: rgba(59,155,255,0.14);
+  --green: #34D399;
+  --green-light: rgba(52,211,153,0.14);
+  --amber: #FFAC0A;
+  --amber-light: rgba(255,172,10,0.16);
+  --purple: #A78BFA;
+  --purple-light: rgba(167,139,250,0.16);
+  --teal: #22D3EE;
+  --teal-light: rgba(34,211,238,0.14);
+  --red: #FB7185;
+  --red-light: rgba(251,113,133,0.14);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-pill: 999px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+
+/* NAVBAR */
+.navbar { position: sticky; top: 0; z-index: 10; background: rgba(6,7,10,0.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+.navbar-inner { max-width: 1100px; margin: 0 auto; padding: .9rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-size: 15px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.nav-logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 10px rgba(59,155,255,.7); }
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 13px; font-weight: 500; transition: color .15s; }
+.nav-links a:hover { color: var(--text); }
+.nav-cta { background: var(--blue-light); border: 1px solid rgba(59,155,255,0.35); color: #BFDBFF; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: var(--radius-pill); text-transform: uppercase; letter-spacing: .04em; }
+
+/* HEADER / HERO */
+.header { position: relative; overflow: hidden; background:
+    radial-gradient(900px 420px at 12% -10%, rgba(255,172,10,0.16), transparent 60%),
+    radial-gradient(900px 460px at 88% 0%, rgba(59,155,255,0.20), transparent 60%),
+    var(--bg);
+  color: var(--text); padding: 3.5rem 2rem 2.5rem; border-bottom: 1px solid var(--border); }
+.header-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+.header-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(59,155,255,0.12); border: 1px solid rgba(59,155,255,0.3); color: #BFDBFF; font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: var(--radius-pill); margin-bottom: 1.25rem; letter-spacing: .04em; text-transform: uppercase; }
+.header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.12; margin-bottom: .75rem; color: var(--text); }
+.header h1 .accent { color: var(--blue); }
+.header-sub { font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 2rem; max-width: 640px; }
+.stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; max-width: 560px; }
+.stat { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: .75rem 1rem; }
+.stat-n { font-size: 1.75rem; font-weight: 700; color: #6CB4FF; }
+.stat-l { font-size: 11px; color: var(--text-tertiary); margin-top: 2px; }
+
+/* MAIN */
+.main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
+.section-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--text-tertiary); margin-bottom: .5rem; }
+.section-title { font-size: 1.5rem; font-weight: 700; color: var(--text); margin-bottom: 2rem; }
+.section-title span { color: var(--text-secondary); font-weight: 400; font-size: 1rem; display: block; margin-top: .4rem; }
+
+/* PATH CARDS */
+.path-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 3rem; }
+.path-card { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; text-decoration: none; display: flex; flex-direction: column; transition: border-color .15s, transform .15s, box-shadow .15s; }
+.path-card:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: 0 14px 34px rgba(0,0,0,.4); }
+.path-icon { font-size: 30px; margin-bottom: .9rem; display: block; }
+.path-title { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: .5rem; }
+.path-desc { font-size: 12.5px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem; flex: 1; }
+.path-stats { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1.1rem; }
+.path-stat { font-size: 10.5px; font-weight: 600; padding: 3px 9px; border-radius: var(--radius-pill); }
+.ps-1 { background: var(--blue-light); color: var(--blue); }
+.ps-2 { background: var(--green-light); color: var(--green); }
+.path-cta { font-size: 12.5px; font-weight: 700; color: var(--blue); display: inline-flex; align-items: center; gap: 5px; }
+.pc-border-1 { border-top: 3px solid var(--blue); }
+.pc-border-2 { border-top: 3px solid var(--teal); }
+.pc-border-3 { border-top: 3px solid var(--amber); }
+.pc-border-4 { border-top: 3px solid var(--green); }
+.pc-border-5 { border-top: 3px solid var(--purple); }
+
+/* ABOUT STRIP */
+.about-box { background: var(--amber-light); border: 1px solid rgba(255,172,10,0.3); border-left: 4px solid var(--amber); border-radius: var(--radius-sm); padding: 1.1rem 1.25rem; margin-bottom: 3rem; }
+.about-box h4 { font-size: 13px; font-weight: 700; color: var(--amber); margin-bottom: .5rem; }
+.about-box p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+/* FOOTER */
+.footer { background: var(--bg); color: var(--text-tertiary); text-align: center; padding: 2rem; font-size: 12px; margin-top: 1rem; border-top: 1px solid var(--border); }
+.footer a { color: var(--text-secondary); text-decoration: none; }
+
+@media (max-width: 800px) {
+  .path-grid { grid-template-columns: 1fr 1fr; }
+  .stat-row { grid-template-columns: repeat(2,1fr); }
+  .nav-links { display: none; }
+  .header h1 { font-size: 1.9rem; }
+}
+@media (max-width: 520px) {
+  .path-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="nav-logo" href="#"><span class="nav-logo-dot"></span>TheSaarathiAI Career Pathfinder</a>
+    <div class="nav-links">
+      <a href="#paths">Learning Paths</a>
+      <a href="https://github.com/medaram9/TheSaarathiAI-Career-PathFinder" target="_blank">GitHub</a>
+      <a href="README.md">Docs</a>
+    </div>
+    <div class="nav-cta">Coming Soon</div>
+  </div>
+</div>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-badge">✓ 100% Free · No Paywalls · Community-Built</div>
+    <h1>Pick your career track.<br>Get a <span class="accent">complete</span> curriculum.</h1>
+    <p class="header-sub">Paid courses charge thousands of dollars and gatekeep the good stuff. Five complete career tracks, built from real practitioner content — free, verified, no paywalls.</p>
+    <div class="stat-row">
+      <div class="stat"><div class="stat-n">5</div><div class="stat-l">Career Tracks</div></div>
+      <div class="stat"><div class="stat-n">59</div><div class="stat-l">Total Modules</div></div>
+      <div class="stat"><div class="stat-n">~423</div><div class="stat-l">Free Hours</div></div>
+      <div class="stat"><div class="stat-n">$0</div><div class="stat-l">Cost</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div id="paths">
+    <div class="section-label">Learning Paths</div>
+    <div class="section-title">Choose your track<span>Every track has the same interactive tools — skill checker, T-shaped skills tracker, and portfolio guide.</span></div>
+    <div class="path-grid">
+      <a class="path-card pc-border-1" href="FDE-Pathfinder-By_TheSaarathiai-Preview.html">
+        <span class="path-icon">🚀</span>
+        <div class="path-title">Forward Deployed Engineer</div>
+        <div class="path-desc">AI deployment, LangGraph agents, Vertex AI, Azure Foundry, MCP, cost management, and security — the full FDE stack.</div>
+        <div class="path-stats"><span class="path-stat ps-1">15 modules</span><span class="path-stat ps-2">~168 hrs</span></div>
+        <div class="path-cta">Start track →</div>
+      </a>
+      <a class="path-card pc-border-2" href="Network-Pathfinder-By_TheSaarathiai-Preview.html">
+        <span class="path-icon">🌐</span>
+        <div class="path-title">Network Engineer</div>
+        <div class="path-desc">Original practitioner content from 14 years of production experience — Cisco, Juniper, Palo Alto, F5, ACI, and cloud networking.</div>
+        <div class="path-stats"><span class="path-stat ps-1">14 modules</span><span class="path-stat ps-2">~120 hrs</span></div>
+        <div class="path-cta">Start track →</div>
+      </a>
+      <a class="path-card pc-border-3" href="DevOps-Pathfinder-By_TheSaarathiai-Preview.html">
+        <span class="path-icon">⚙️</span>
+        <div class="path-title">DevOps Engineer</div>
+        <div class="path-desc">From Linux to Kubernetes, CI/CD to Infrastructure as Code — Jenkins, Docker, Terraform, Ansible, AWS, and GCP.</div>
+        <div class="path-stats"><span class="path-stat ps-1">10 modules</span><span class="path-stat ps-2">~35 hrs</span></div>
+        <div class="path-cta">Start track →</div>
+      </a>
+      <a class="path-card pc-border-4" href="Python-Pathfinder-By_TheSaarathiai-Preview.html">
+        <span class="path-icon">🐍</span>
+        <div class="path-title">Full Stack Python</div>
+        <div class="path-desc">Python fundamentals through advanced concepts — OOP, decorators, generators — plus real-world AI and networking applications.</div>
+        <div class="path-stats"><span class="path-stat ps-1">8 modules</span><span class="path-stat ps-2">~20 hrs</span></div>
+        <div class="path-cta">Start track →</div>
+      </a>
+      <a class="path-card pc-border-5" href="DataEngineer-Pathfinder-By_TheSaarathiai-Preview.html">
+        <span class="path-icon">📊</span>
+        <div class="path-title">Data Engineer</div>
+        <div class="path-desc">From SQL to production data pipelines — Spark, Kafka, Airflow, dbt, AWS, and GCP, built from real enterprise deployments.</div>
+        <div class="path-stats"><span class="path-stat ps-1">12 modules</span><span class="path-stat ps-2">~80 hrs</span></div>
+        <div class="path-cta">Start track →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="about-box">
+    <h4>🚀 Built by TheSaarathiAI Career Pathfinder</h4>
+    <p>This site is part of TheSaarathiAI Career Pathfinder — an AI platform that personalizes each path based on your existing skills. It assesses what you already know, skips those modules, and navigates you directly to the specific lesson that closes each gap. Think Google Maps for your career. Coming soon.</p>
+  </div>
+</div>
+
+<div class="footer">
+  Built by TheSaarathiAI · 100% free · No paywalls · <a href="#">thesaarathiai.com</a>
+</div>
+
+</body>
+</html>

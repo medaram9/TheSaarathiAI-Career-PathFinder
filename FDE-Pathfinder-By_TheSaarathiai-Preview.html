@@ -32,6 +32,7 @@
   --radius-pill: 999px;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
 
 /* HEADER */
@@ -68,12 +69,11 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', syst
 .rp-5 { background: linear-gradient(180deg, rgba(167,139,250,0.14), transparent); } .rp-5 .rp-phase { color: var(--purple); }
 
 /* TABS */
-.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
-.tab { padding: .65rem 1.25rem; font-size: 13px; font-weight: 500; color: var(--text-secondary); cursor: pointer; border: 1px solid var(--border); background: var(--bg-elevated); border-radius: var(--radius-pill); transition: all .15s; }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; position: sticky; top: 12px; z-index: 5; }
+.tab { padding: .65rem 1.25rem; font-size: 13px; font-weight: 500; color: var(--text-secondary); text-decoration: none; cursor: pointer; border: 1px solid var(--border); background: var(--bg-elevated); border-radius: var(--radius-pill); transition: all .15s; }
 .tab:hover { color: var(--text); border-color: var(--border-strong); box-shadow: 0 4px 14px rgba(0,0,0,.3); }
 .tab.active { color: #fff; font-weight: 600; background: linear-gradient(135deg, rgba(59,155,255,0.22), rgba(255,172,10,0.14)); border-color: rgba(59,155,255,0.55); box-shadow: 0 0 0 1px rgba(59,155,255,0.3), 0 6px 20px rgba(59,155,255,0.18); }
-.panel { display: none; }
-.panel.active { display: block; }
+.section-block { scroll-margin-top: 16px; margin-bottom: 2.5rem; }
 
 /* GAP BANNER */
 .gap-banner { background: var(--amber-light); border: 1px solid rgba(255,172,10,0.3); border-left: 4px solid var(--amber); border-radius: var(--radius-sm); padding: .875rem 1rem; margin-bottom: 1.25rem; font-size: 12.5px; color: var(--text-secondary); line-height: 1.6; }
@@ -81,16 +81,19 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', syst
 
 /* MODULE CARDS */
 .mod { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 8px; background: var(--bg-elevated); transition: box-shadow .15s, border-color .15s; }
-.mod:hover { border-color: var(--border-strong); box-shadow: 0 10px 30px rgba(0,0,0,.35); }
-.mod-head { display: flex; align-items: center; gap: 12px; padding: .875rem 1.125rem; cursor: pointer; background: transparent; user-select: none; }
+.mod:hover { border-color: rgba(59,155,255,0.4); box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+.mod-head { display: flex; align-items: center; gap: 12px; padding: .875rem 1.125rem; cursor: pointer; background: transparent; user-select: none; transition: background .15s; }
+.mod-head:hover { background: rgba(59,155,255,0.05); }
 .mod-num { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
 .mod-info { flex: 1; min-width: 0; }
 .mod-title { font-size: 14px; font-weight: 600; color: var(--text); }
 .mod-meta { font-size: 11px; color: var(--text-tertiary); margin-top: 2px; }
+.mod-meta::after { content: " · Click to expand"; color: var(--blue); opacity: .75; }
+.mod.open .mod-meta::after { content: " · Click to collapse"; }
 .mod-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .mod-hrs { font-size: 12px; font-weight: 600; color: var(--green); }
 .new-badge { background: var(--amber-light); color: var(--amber); font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: var(--radius-pill); border: 1px solid rgba(255,172,10,0.35); }
-.mod-chevron { font-size: 18px; color: var(--text-tertiary); transition: transform .2s; }
+.mod-chevron { width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--blue); background: var(--blue-light); border: 1px solid rgba(59,155,255,0.35); border-radius: 50%; transition: transform .2s; }
 .mod.open .mod-chevron { transform: rotate(180deg); }
 .mod-body { display: none; padding: 1.125rem 1.25rem; border-top: 1px solid var(--border); background: rgba(255,255,255,0.015); }
 .mod.open .mod-body { display: block; }
@@ -107,7 +110,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', syst
 .res-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue-light); border: 2px solid var(--blue); flex-shrink: 0; }
 .res-info { flex: 1; min-width: 0; }
 .res-name { font-size: 12.5px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.res-src { font-size: 11px; color: var(--text-tertiary); }
+.res-src { font-size: 11px; color: #8FA6D9; font-weight: 500; }
 .res-hrs { font-size: 11px; font-weight: 600; color: var(--green); white-space: nowrap; flex-shrink: 0; }
 .res-link { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: var(--blue); text-decoration: none; font-weight: 500; white-space: nowrap; flex-shrink: 0; padding: 3px 10px; background: var(--blue-light); border: 1px solid rgba(59,155,255,0.3); border-radius: var(--radius-pill); transition: background .15s; }
 .res-link:hover { background: rgba(59,155,255,0.26); }
@@ -212,27 +215,30 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', syst
   </div>
 
   <div class="tabs">
-    <button class="tab active" onclick="sw('modules',this)">All modules</button>
-    <button class="tab" onclick="sw('assess',this)">Skill check</button>
-    <button class="tab" onclick="sw('tshape',this)">T-shaped skills</button>
-    <button class="tab" onclick="sw('port',this)">Portfolio</button>
+    <a class="tab" href="#sec-modules" data-target="sec-modules">All modules</a>
+    <a class="tab" href="#sec-assess" data-target="sec-assess">Skill check</a>
+    <a class="tab" href="#sec-tshape" data-target="sec-tshape">T-shaped skills</a>
+    <a class="tab" href="#sec-port" data-target="sec-port">Portfolio</a>
   </div>
 
-  <!-- MODULES TAB -->
-  <div id="tab-modules" class="panel active">
+  <!-- MODULES SECTION -->
+  <div class="section-block" id="sec-modules">
+    <div class="section-label">All Modules</div>
     <div class="gap-banner"><strong>3 modules added after cross-checking industry FDE roadmaps and practitioner feedback:</strong> Module 1c (Database / PostgreSQL + SQL — SELECT, JOIN, Indexing), Module 10 (Azure AI Foundry — critical for Microsoft-stack enterprise FDE roles), and Module 13 (Portfolio Strategy — GitHub projects + LinkedIn positioning). Everything else was already covered.</div>
     <div id="modGrid"></div>
   </div>
 
-  <!-- SKILL CHECK TAB -->
-  <div id="tab-assess" class="panel">
+  <!-- SKILL CHECK SECTION -->
+  <div class="section-block" id="sec-assess">
+    <div class="section-label">Skill Check</div>
     <p class="skill-intro">Rate your current level in each domain. The skill check shows what to skip and what to focus on first — so you spend time on gaps, not on things you already know.</p>
     <div class="skill-grid" id="skillGrid"></div>
     <div id="recOut"></div>
   </div>
 
-  <!-- T-SHAPED SKILLS TAB -->
-  <div id="tab-tshape" class="panel">
+  <!-- T-SHAPED SKILLS SECTION -->
+  <div class="section-block" id="sec-tshape">
+    <div class="section-label">T-Shaped Skills</div>
     <p style="font-size:13px;color:var(--text-secondary);margin-bottom:1.25rem">FDEs need deep technical skills AND broad execution skills. Most candidates only have one half. Both are required to get the role and keep it.</p>
     <div class="tshape-grid">
       <div class="tshape-col">
@@ -274,8 +280,9 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', syst
     </div>
   </div>
 
-  <!-- PORTFOLIO TAB -->
-  <div id="tab-port" class="panel">
+  <!-- PORTFOLIO SECTION -->
+  <div class="section-block" id="sec-port">
+    <div class="section-label">Portfolio</div>
     <p style="font-size:13px;color:var(--text-secondary);margin-bottom:1.25rem">Because FDE is a relatively new role, a portfolio of real end-to-end projects is the single best way to prove you can do the job. Build 4 projects, put them on GitHub, and showcase them on LinkedIn.</p>
     <div class="port-grid">
       <div class="port-card">
@@ -590,12 +597,16 @@ function renderRec() {
     </div>` : ''}`;
 }
 
-function sw(id, el) {
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-  el.classList.add('active');
-  document.getElementById('tab-' + id).classList.add('active');
-}
+const navTabs = document.querySelectorAll('.tab');
+const sections = document.querySelectorAll('.section-block');
+const spy = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navTabs.forEach(t => t.classList.toggle('active', t.dataset.target === entry.target.id));
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+sections.forEach(s => spy.observe(s));
 
 buildMods();
 buildSkills();

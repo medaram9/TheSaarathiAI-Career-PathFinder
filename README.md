@@ -196,7 +196,7 @@ FDEs need deep technical expertise (the vertical bar of the T) — Python, RAG, 
 
 | Resource | Platform | Link | Hours |
 |---|---|---|---|
-| Play with Docker — browser-based labs, no install required (free) | labs.play-with-docker.com | [Open](https://labs.play-with-docker.com) | 4 hrs |
+| Play with Docker — browser-based labs, no install required (free) | labs.play-with-docker.com | [Open](https://training.play-with-docker.com/) | 4 hrs |
 | Docker Full Course — freeCodeCamp (Eissa, DolfinED, 7hrs, June 2026) | freecodecamp.org | [Open](https://www.freecodecamp.org/news/docker-full-course/) | 7 hrs |
 
 </details>

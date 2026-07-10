@@ -194,11 +194,11 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', syst
   <div class="header-inner">
     <div class="header-badge">✓ 100% Free · No Paywalls · TheSaarathiAI Career Track</div>
     <h1>Forward Deployed Engineer<br>Complete Curriculum</h1>
-    <p class="header-sub">13 modules. ~150 hours. 80+ verified free resources. Cross-validated against industry FDE roadmaps and expert practitioners. Zero paid courses required.</p>
+    <p class="header-sub">15 modules. ~168 hours. 90+ verified free resources. Cross-validated against industry FDE roadmaps and expert practitioners. Zero paid courses required.</p>
     <div class="stat-row">
-      <div class="stat"><div class="stat-n">13</div><div class="stat-l">Modules</div></div>
-      <div class="stat"><div class="stat-n">~150</div><div class="stat-l">Free hours</div></div>
-      <div class="stat"><div class="stat-n">80+</div><div class="stat-l">Verified links</div></div>
+      <div class="stat"><div class="stat-n">15</div><div class="stat-l">Modules</div></div>
+      <div class="stat"><div class="stat-n">~168</div><div class="stat-l">Free hours</div></div>
+      <div class="stat"><div class="stat-n">90+</div><div class="stat-l">Verified links</div></div>
       <div class="stat"><div class="stat-n">$0</div><div class="stat-l">Cost</div></div>
     </div>
   </div>
@@ -210,7 +210,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', syst
     <div class="rp rp-1"><div class="rp-phase">Phase 1</div><div class="rp-title">Foundation</div><div class="rp-skills">Python · Linux · Git · SQL · FastAPI</div></div>
     <div class="rp rp-2"><div class="rp-phase">Phase 2</div><div class="rp-title">AI Core</div><div class="rp-skills">LLMs · RAG · Agents · Evals</div></div>
     <div class="rp rp-3"><div class="rp-phase">Phase 3</div><div class="rp-title">Infrastructure</div><div class="rp-skills">Cloud · K8s · Terraform · Docker</div></div>
-    <div class="rp rp-4"><div class="rp-phase">Phase 4</div><div class="rp-title">Production</div><div class="rp-skills">Vertex AI · Foundry · MCP · A2A</div></div>
+    <div class="rp rp-4"><div class="rp-phase">Phase 4</div><div class="rp-title">Production</div><div class="rp-skills">Vertex AI · Foundry · MCP · A2A · Cost · Security</div></div>
     <div class="rp rp-5"><div class="rp-phase">Phase 5</div><div class="rp-title">Launch</div><div class="rp-skills">FDE Execution · Portfolio</div></div>
   </div>
 
@@ -481,7 +481,32 @@ const MODS = [
      {n:"Loom — free screen recording for project walkthroughs",src:"loom.com",url:"https://www.loom.com",hrs:"30 min"},
      {n:"2026 FDE complete career guide (research-backed, free article)",src:"hashnode.com",url:"https://hashnode.com/blog/a-complete-2026-guide-to-the-forward-deployed-engineer",hrs:"1 hr"},
    ],
-   capstone:{t:"Launch your FDE portfolio",d:"3+ GitHub projects live with READMEs and Loom demos. LinkedIn headline updated. Applied to 5 FDE roles. DM'd 3 current FDEs on LinkedIn for informational interviews."}}
+   capstone:{t:"Launch your FDE portfolio",d:"3+ GitHub projects live with READMEs and Loom demos. LinkedIn headline updated. Applied to 5 FDE roles. DM'd 3 current FDEs on LinkedIn for informational interviews."}},
+  {num:"14",title:"AI Cost Management — FinOps for LLM Deployments",phase:4,hrs:"~8 hrs",isNew:true,
+   phaseColor:"amber",
+   checks:["Can you estimate monthly cost for a RAG + agent system at 1K and 10K daily users?","Can you implement model routing — expensive model for complex tasks, cheap model for simple routing?","Do you understand the cost difference between synchronous vs batch API calls (up to 50% saving)?","Can you use prompt caching and compression to reduce token spend by 30%+?","Can you set up budget alerts and anomaly detection for LLM spend on GCP or AWS?","Can you explain to a customer's CTO why their AI bill was 3x higher than forecasted?","Do you know the 10-20-70 rule for AI project cost allocation?"],
+   resources:[
+     {n:"FinOps for Generative AI — AWS Skill Builder (official, 1hr, free)",src:"skillbuilder.aws",url:"https://skillbuilder.aws",hrs:"1 hr"},
+     {n:"FinOps Fundamentals & Strategies Part 1 + Part 2 — AWS Skill Builder (free)",src:"skillbuilder.aws",url:"https://skillbuilder.aws",hrs:"2 hrs"},
+     {n:"FinOps for AI Overview — FinOps Foundation (official free guide)",src:"finops.org",url:"https://www.finops.org/wg/finops-for-ai-overview/",hrs:"2 hrs"},
+     {n:"How to Forecast AI Services Costs in Cloud — FinOps Foundation (free)",src:"finops.org",url:"https://www.finops.org/wg/how-to-forecast-ai-services-costs-in-cloud/",hrs:"1 hr"},
+     {n:"Optimize LLM Costs & Streamline Processes — Coursera (free audit)",src:"coursera.org",url:"https://www.coursera.org/learn/optimize-llm-costs-and-streamline-processes",hrs:"3 hrs"},
+     {n:"Complete AI Security & AgentOps Masterclass — YouTube (8hrs, free, covers guardrails + cost)",src:"youtube.com",url:"https://www.youtube.com/watch?v=rQE3w8Qjx98",hrs:"3 hrs"},
+   ],
+   capstone:{t:"Build a cost dashboard for your LangGraph agent",d:"Track cost per run and cost per user. Implement model routing (expensive model for complex tasks, cheap model for routing). Add budget alerts. Produce a written cost estimate for a customer deploying at 1K and 10K daily active users."}},
+  {num:"15",title:"AI Security — OWASP LLM Top 10, Prompt Injection, MCP Security",phase:4,hrs:"~10 hrs",isNew:true,
+   phaseColor:"amber",
+   checks:["Can you explain all 10 OWASP LLM risks and give a real-world example of each?","Can you demonstrate a direct and indirect prompt injection attack against a RAG pipeline and fix it?","Can you secure an MCP server against tool poisoning and tool shadowing?","Do you know how to implement input validation, output filtering, and rate limiting as security controls?","Can you threat-model a customer's AI deployment using STRIDE methodology?","Can you explain EU AI Act and NIST AI RMF compliance requirements to a customer's CISO?","Do you understand how RAG poisoning works and how to defend against it?"],
+   resources:[
+     {n:"OWASP Top 10 for LLM Applications — official free documentation (2025/2026)",src:"owasp.org",url:"https://owasp.org/www-project-top-10-for-large-language-model-applications/",hrs:"2 hrs"},
+     {n:"OWASP GenAI Security Project — LLM Top 10 deep dive (free)",src:"genai.owasp.org",url:"https://genai.owasp.org/llm-top-10/",hrs:"2 hrs"},
+     {n:"10 Free OWASP LLM Top 10 Interactive Exercises — RansomLeak (free, no account needed)",src:"ransomleak.com",url:"https://ransomleak.com/blog/owasp-llm-top-10-training-course/",hrs:"2 hrs"},
+     {n:"Complete AI Security Course — YouTube (8hrs, free, guardrails + LLM evals + AgentOps)",src:"youtube.com",url:"https://www.youtube.com/watch?v=rQE3w8Qjx98",hrs:"8 hrs"},
+     {n:"AI/ML Free Resources for Security and Prompt Injection — GitHub (curated, free)",src:"github.com",url:"https://github.com/anmolksachan/AI-ML-Free-Resources-for-Security-and-Prompt-Injection",hrs:"3 hrs"},
+     {n:"Google SAIF — Secure AI Framework (official Google, free)",src:"safety.google",url:"https://safety.google/cybersecurity-advancements/saif/",hrs:"1 hr"},
+     {n:"Generative AI and LLM Security — Coursera/Edureka (free audit)",src:"coursera.org",url:"https://www.coursera.org/learn/generative-ai-llm-security",hrs:"3 hrs"},
+   ],
+   capstone:{t:"Security audit your MCP + Enterprise Integration project",d:"Attempt a prompt injection attack. Test for data exfiltration via RAG poisoning. Document 3 vulnerabilities found. Implement fixes using OWASP guidelines. Produce a 1-page security assessment you could hand to a customer's security team."}}
 ];
 
 const phaseColors = {
@@ -544,7 +569,9 @@ const SKILLS = [
   {id:"agents",l:"LangGraph Agents",mod:"4"},{id:"evals",l:"Evals / LangSmith",mod:"5"},
   {id:"docker",l:"Docker",mod:"6"},{id:"cloud",l:"Cloud (GCP/AWS/Azure)",mod:"7"},
   {id:"k8s",l:"Kubernetes + Terraform",mod:"8"},{id:"foundry",l:"Azure AI Foundry",mod:"10"},
-  {id:"mcp",l:"MCP / A2A",mod:"11"},{id:"portfolio",l:"GitHub Portfolio",mod:"13"}
+  {id:"mcp",l:"MCP / A2A",mod:"11"},{id:"portfolio",l:"GitHub Portfolio",mod:"13"},
+  {id:"cost",l:"AI Cost Management / FinOps",mod:"14"},
+  {id:"security",l:"AI Security / OWASP LLM",mod:"15"}
 ];
 
 const sv = {};

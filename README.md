@@ -22,14 +22,14 @@ A Forward Deployed Engineer (FDE) is a senior engineer who embeds inside enterpr
 | 1 | Foundation | Python · Linux · Git · SQL · FastAPI |
 | 2 | AI Core | LLMs · RAG · Agents · Evals |
 | 3 | Infrastructure | Cloud · Docker · K8s · Terraform |
-| 4 | Production | Vertex AI · Azure Foundry · MCP · A2A |
+| 4 | Production | Vertex AI · Azure Foundry · MCP · A2A · Cost · Security |
 | 5 | Launch | FDE Execution · Portfolio |
 
 ## What is T-Shaped Skills?
 
 FDEs need deep technical expertise (the vertical bar of the T) — Python, RAG, LangGraph agents, cloud infrastructure, MCP/A2A protocols — **and** broad execution skills like customer discovery, solution design, and stakeholder communication (the horizontal bar). Most candidates only develop one half and wonder why they don't land the role. This curriculum is built to develop both.
 
-## All 13 Modules
+## All 15 Modules
 
 <details>
 <summary><strong>Module 1a: Python Fundamentals (~5 hrs)</strong></summary>
@@ -356,6 +356,65 @@ FDEs need deep technical expertise (the vertical bar of the T) — Python, RAG, 
 **Capstone Project**
 
 **Launch your FDE portfolio** — 3+ GitHub projects live with READMEs and Loom demos. LinkedIn headline updated. Applied to 5 FDE roles. DM'd 3 current FDEs on LinkedIn for informational interviews.
+
+</details>
+
+<details>
+<summary><strong>Module 14: AI Cost Management — FinOps for LLM Deployments (~8 hrs) ⭐ NEW</strong></summary>
+
+**Competency checks**
+- [ ] Can you estimate monthly cost for a RAG + agent system at 1K and 10K daily users?
+- [ ] Can you implement model routing — expensive model for complex tasks, cheap model for simple routing?
+- [ ] Do you understand the cost difference between synchronous vs batch API calls (up to 50% saving)?
+- [ ] Can you use prompt caching and compression to reduce token spend by 30%+?
+- [ ] Can you set up budget alerts and anomaly detection for LLM spend on GCP or AWS?
+- [ ] Can you explain to a customer's CTO why their AI bill was 3x higher than forecasted?
+- [ ] Do you know the 10-20-70 rule for AI project cost allocation?
+
+**Free Resources**
+
+| Resource | Platform | Link | Hours |
+|---|---|---|---|
+| FinOps for Generative AI — AWS Skill Builder (official, 1hr, free) | skillbuilder.aws | [Open](https://skillbuilder.aws) | 1 hr |
+| FinOps Fundamentals & Strategies Part 1 + Part 2 — AWS Skill Builder (free) | skillbuilder.aws | [Open](https://skillbuilder.aws) | 2 hrs |
+| FinOps for AI Overview — FinOps Foundation (official free guide) | finops.org | [Open](https://www.finops.org/wg/finops-for-ai-overview/) | 2 hrs |
+| How to Forecast AI Services Costs in Cloud — FinOps Foundation (free) | finops.org | [Open](https://www.finops.org/wg/how-to-forecast-ai-services-costs-in-cloud/) | 1 hr |
+| Optimize LLM Costs & Streamline Processes — Coursera (free audit) | coursera.org | [Open](https://www.coursera.org/learn/optimize-llm-costs-and-streamline-processes) | 3 hrs |
+| Complete AI Security & AgentOps Masterclass — YouTube (8hrs, free, covers guardrails + cost) | youtube.com | [Open](https://www.youtube.com/watch?v=rQE3w8Qjx98) | 3 hrs |
+
+**Capstone Project**
+
+**Build a cost dashboard for your LangGraph agent** — Track cost per run and cost per user. Implement model routing (expensive model for complex tasks, cheap model for routing). Add budget alerts. Produce a written cost estimate for a customer deploying at 1K and 10K daily active users.
+
+</details>
+
+<details>
+<summary><strong>Module 15: AI Security — OWASP LLM Top 10, Prompt Injection, MCP Security (~10 hrs) ⭐ NEW</strong></summary>
+
+**Competency checks**
+- [ ] Can you explain all 10 OWASP LLM risks and give a real-world example of each?
+- [ ] Can you demonstrate a direct and indirect prompt injection attack against a RAG pipeline and fix it?
+- [ ] Can you secure an MCP server against tool poisoning and tool shadowing?
+- [ ] Do you know how to implement input validation, output filtering, and rate limiting as security controls?
+- [ ] Can you threat-model a customer's AI deployment using STRIDE methodology?
+- [ ] Can you explain EU AI Act and NIST AI RMF compliance requirements to a customer's CISO?
+- [ ] Do you understand how RAG poisoning works and how to defend against it?
+
+**Free Resources**
+
+| Resource | Platform | Link | Hours |
+|---|---|---|---|
+| OWASP Top 10 for LLM Applications — official free documentation (2025/2026) | owasp.org | [Open](https://owasp.org/www-project-top-10-for-large-language-model-applications/) | 2 hrs |
+| OWASP GenAI Security Project — LLM Top 10 deep dive (free) | genai.owasp.org | [Open](https://genai.owasp.org/llm-top-10/) | 2 hrs |
+| 10 Free OWASP LLM Top 10 Interactive Exercises — RansomLeak (free, no account needed) | ransomleak.com | [Open](https://ransomleak.com/blog/owasp-llm-top-10-training-course/) | 2 hrs |
+| Complete AI Security Course — YouTube (8hrs, free, guardrails + LLM evals + AgentOps) | youtube.com | [Open](https://www.youtube.com/watch?v=rQE3w8Qjx98) | 8 hrs |
+| AI/ML Free Resources for Security and Prompt Injection — GitHub (curated, free) | github.com | [Open](https://github.com/anmolksachan/AI-ML-Free-Resources-for-Security-and-Prompt-Injection) | 3 hrs |
+| Google SAIF — Secure AI Framework (official Google, free) | safety.google | [Open](https://safety.google/cybersecurity-advancements/saif/) | 1 hr |
+| Generative AI and LLM Security — Coursera/Edureka (free audit) | coursera.org | [Open](https://www.coursera.org/learn/generative-ai-llm-security) | 3 hrs |
+
+**Capstone Project**
+
+**Security audit your MCP + Enterprise Integration project** — Attempt a prompt injection attack. Test for data exfiltration via RAG poisoning. Document 3 vulnerabilities found. Implement fixes using OWASP guidelines. Produce a 1-page security assessment you could hand to a customer's security team.
 
 </details>
 
